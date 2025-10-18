@@ -1,0 +1,245 @@
+/* ====== Style Umum ====== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(270deg, #270218, #040342, #021a2e, #03333a, #3b0303, #332b02);
+    background-size: 1200% 1200%;
+    animation: rgbFlow 20s ease infinite;
+    overflow-x: hidden;
+    padding-top: 80px;
+}
+
+@keyframes rgbFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ====== Header ====== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(90deg, #ff6ec4, #7873f5, #42a5f5, #26c6da, #43e97b, #f5d020);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rgbText 6s ease infinite;
+}
+
+/* ====== Animasi Muncul Halus ====== */
+@keyframes fadeSlideIn {
+    0% { opacity: 0; transform: translateX(-40px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.animate { 
+    opacity: 0; 
+    transform: translateX(-40px); 
+    animation: fadeSlideIn 1.2s ease forwards; 
+}
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.5s; }
+.delay-3 { animation-delay: 0.8s; }
+.delay-4 { animation-delay: 1.1s; }
+.delay-5 { animation-delay: 1.4s; }
+
+/* ====== Profile Section ====== */
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 120px 80px;
+    max-width: 1100px;
+    margin: 80px auto;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+.profile:hover { transform: scale(1.03); }
+
+/* ====== Foto Profil dengan Glow Rainbow Sesuai Background ====== */
+.profile-photo {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 25px;
+    object-fit: cover;
+    border: 5px solid transparent;
+    background: linear-gradient(180deg, #fff, #fff) padding-box;
+    box-shadow: 0 0 40px rgba(255,255,255,0.8);
+    transition: all 0.4s ease;
+    opacity: 0.95;
+}
+
+.profile-photo::after {
+    content: "";
+    position: absolute;
+    top: -5px; left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border-radius: 30px;
+    background: linear-gradient(270deg, #270218, #040342, #021a2e, #03333a, #3b0303, #332b02);
+    background-size: 1200% 1200%;
+    z-index: -1;
+    animation: rgbFlow 20s ease infinite;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px rgba(255,255,255,1);
+}
+
+/* ====== Info Profil ====== */
+.profile-info { max-width: 600px; text-align: left; display: flex; flex-direction: column; justify-content: center; }
+.profile-info h1 {
+    font-size: 2.7rem;
+    background: linear-gradient(90deg, #ff6ec4, #7873f5, #42a5f5, #26c6da, #43e97b, #f5d020);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rgbText 6s ease infinite;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.profile-info span { font-weight: 700; }
+.intro { color: #fff; line-height: 1.7; font-size: 1.12rem; text-align: center; }
+
+/* ====== Social Links ====== */
+.social-links { margin-top: 25px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+.social-links a {
+    display: flex; align-items: center; gap: 12px;
+    background-color: rgba(25, 118, 210, 0.2);
+    border-radius: 15px; padding: 16px 24px;
+    text-decoration: none; color: #fff; font-weight: 500; transition: all 0.3s ease;
+}
+.social-links a:hover { background-color: rgba(25, 118, 210, 0.4); transform: scale(1.1); }
+.social-icon { width: 50px; height: 50px; object-fit: contain; }
+
+/* ====== Logos ====== */
+.logos { display: flex; align-items: center; gap: 25px; margin-top: 30px; justify-content: center; }
+.logo-kampus, .logo-bootcamp { width: 150px; opacity: 0.9; transition: all 0.3s ease; }
+.logo-kampus:hover, .logo-bootcamp:hover { opacity: 1; transform: scale(1.1); }
+
+/* ====== Certificates & Skills dengan Hover & Glow Rainbow Sesuai Background ====== */
+.certificates, .skills { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+    margin-top: 20px; 
+    justify-content: center; 
+}
+
+.cert-slot, .skill-slot {
+    flex: 0 0 calc(33.33% - 30px);
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+    background: linear-gradient(145deg, #1a1a1a, #333333);
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    opacity: 0; 
+    transform: translateY(40px); 
+    animation: fadeSlideUp 0.8s ease forwards;
+}
+
+.cert-slot::after, .skill-slot::after {
+    content: "";
+    position: absolute;
+    top: -3px; left: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-radius: 23px;
+    background: linear-gradient(270deg, #270218, #040342, #021a2e, #03333a, #3b0303, #332b02);
+    background-size: 1200% 1200%;
+    z-index: -1;
+    animation: rgbFlow 20s ease infinite;
+}
+
+.cert-slot:hover img, .skill-slot:hover img {
+    transform: scale(1.2) rotate(5deg);
+    filter: brightness(1.2) saturate(1.3);
+}
+
+.cert-slot:hover, .skill-slot:hover {
+    transform: scale(1.15);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.6);
+}
+
+/* ====== Animasi muncul naik ====== */
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Stagger Animasi */
+.cert-slot:nth-child(1), .skill-slot:nth-child(1) { animation-delay: 0.1s; }
+.cert-slot:nth-child(2), .skill-slot:nth-child(2) { animation-delay: 0.3s; }
+.cert-slot:nth-child(3), .skill-slot:nth-child(3) { animation-delay: 0.5s; }
+.cert-slot:nth-child(4), .skill-slot:nth-child(4) { animation-delay: 0.7s; }
+.cert-slot:nth-child(5), .skill-slot:nth-child(5) { animation-delay: 0.9s; }
+.cert-slot:nth-child(6), .skill-slot:nth-child(6) { animation-delay: 1.1s; }
+.cert-slot:nth-child(7), .skill-slot:nth-child(7) { animation-delay: 1.3s; }
+.cert-slot:nth-child(8), .skill-slot:nth-child(8) { animation-delay: 1.5s; }
+.cert-slot:nth-child(9), .skill-slot:nth-child(9) { animation-delay: 1.7s; }
+.cert-slot:nth-child(10), .skill-slot:nth-child(10){ animation-delay: 1.9s; }
+.cert-slot:nth-child(11), .skill-slot:nth-child(11){ animation-delay: 2.1s; }
+.cert-slot:nth-child(12), .skill-slot:nth-child(12){ animation-delay: 2.3s; }
+
+.cert-slot img, .skill-slot img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    transition: all 0.5s ease;
+}
+
+/* ====== Tombol Kembali ====== */
+.back-link { margin-top: 30px; text-align: center; }
+.back-link a {
+    text-decoration: none; background-color: rgba(25, 118, 210, 0.2); color: #fff;
+    padding: 10px 18px; border-radius: 10px; font-weight: 500; transition: all 0.3s ease;
+}
+.back-link a:hover { background-color: rgba(25, 118, 210, 0.4); transform: scale(1.05); }
+
+/* ====== Footer ====== */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+    border-top: 2px solid rgba(255,255,255,0.1);
+}
+footer p {
+    font-size: 1rem; font-weight: 500;
+    background: linear-gradient(90deg, #ff6ec4, #7873f5, #42a5f5, #26c6da, #43e97b, #f5d020);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rgbText 6s ease infinite;
+    margin: 0; letter-spacing: 0.5px;
+}
