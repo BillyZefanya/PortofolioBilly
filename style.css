@@ -3,7 +3,7 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
-    background: linear-gradient(270deg, #270218, #040342, #021a2e, #03333a, #3b0303, #332b02);
+    background: linear-gradient(270deg, #4b042eff, #040277, #033055, #034e5a, #570404, #574904);
     background-size: 1200% 1200%;
     animation: rgbFlow 20s ease infinite;
     overflow-x: hidden;
@@ -85,8 +85,8 @@ body {
     border-radius: 25px;
     object-fit: cover;
     border: 5px solid transparent;
-    background: linear-gradient(180deg, #fff, #fff) padding-box;
-    box-shadow: 0 0 40px rgba(255,255,255,0.8);
+    background: linear-gradient(180deg, #b3b0e4, #eec0c0) padding-box;
+    box-shadow: 0 0 40px rgba(82, 5, 5, 0.8);
     transition: all 0.4s ease;
     opacity: 0.95;
 }
@@ -106,7 +106,7 @@ body {
 
 .profile-photo:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 50px rgba(255,255,255,1);
+    box-shadow: 0 0 50px rgb(4, 10, 87);
 }
 
 /* ====== Info Profil ====== */
@@ -128,11 +128,11 @@ body {
 .social-links { margin-top: 25px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
 .social-links a {
     display: flex; align-items: center; gap: 12px;
-    background-color: rgba(25, 118, 210, 0.2);
+    background-color: rgba(29, 17, 80, 0.2);
     border-radius: 15px; padding: 16px 24px;
-    text-decoration: none; color: #fff; font-weight: 500; transition: all 0.3s ease;
+    text-decoration: none; color: #8683af; font-weight: 500; transition: all 0.3s ease;
 }
-.social-links a:hover { background-color: rgba(25, 118, 210, 0.4); transform: scale(1.1); }
+.social-links a:hover { background-color: rgba(70, 9, 9, 0.4); transform: scale(1.1); }
 .social-icon { width: 50px; height: 50px; object-fit: contain; }
 
 /* ====== Logos ====== */
